@@ -12,7 +12,7 @@
         protected override void RunTool()
         {
             var tool = new SqlPackageDeployReportRunner(FileSystem, Environment, ProcessRunner, Tools);
-            tool.DeployReport(Settings);
+            tool.Execute(Settings);
         }
     }
 }

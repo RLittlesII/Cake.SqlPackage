@@ -11,7 +11,7 @@
         protected override void RunTool()
         {
             var tool = new SqlPackageDriftReportRunner(FileSystem, Environment, ProcessRunner, Tools);
-            tool.DriftReport(Settings);
+            tool.Execute(Settings);
         }
     }
 }

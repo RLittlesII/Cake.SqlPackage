@@ -38,7 +38,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackageExtractRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Extract(settings ?? new SqlPackageExtractSettings());
+            runner.Execute(settings ?? new SqlPackageExtractSettings());
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackageExtractRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Extract(settings);
+            runner.Execute(settings);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackagePublishRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Publish(settings ?? new SqlPackagePublishSettings());
+            runner.Execute(settings ?? new SqlPackagePublishSettings());
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackagePublishRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Publish(settings);
+            runner.Execute(settings);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackageExportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Export(settings ?? new SqlPackageExportSettings());
+            runner.Execute(settings ?? new SqlPackageExportSettings());
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackageExportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Export(settings);
+            runner.Execute(settings);
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackageImportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Import(settings ?? new SqlPackageImportSettings());
+            runner.Execute(settings ?? new SqlPackageImportSettings());
         }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackageImportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Import(settings);
+            runner.Execute(settings);
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackageDeployReportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.DeployReport(settings ?? new SqlPackageDeployReportSettings());
+            runner.Execute(settings ?? new SqlPackageDeployReportSettings());
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackageDeployReportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.DeployReport(settings);
+            runner.Execute(settings);
         }
 
         /// <summary>
@@ -346,7 +346,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackageDriftReportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.DriftReport(settings ?? new SqlPackageDriftReportSettings());
+            runner.Execute(settings ?? new SqlPackageDriftReportSettings());
         }
 
         /// <summary>
@@ -380,7 +380,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackageDriftReportRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.DriftReport(settings);
+            runner.Execute(settings);
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace Cake.SqlPackage
             }
 
             var runner = new SqlPackageScriptRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Script(settings ?? new SqlPackageScriptSettings());
+            runner.Execute(settings ?? new SqlPackageScriptSettings());
         }
 
         /// <summary>
@@ -444,7 +444,7 @@ namespace Cake.SqlPackage
             configurationAction(settings);
 
             var runner = new SqlPackageScriptRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Script(settings);
+            runner.Execute(settings);
         }
     }
 }

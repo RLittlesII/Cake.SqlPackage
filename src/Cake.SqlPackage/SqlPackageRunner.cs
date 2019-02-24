@@ -20,6 +20,22 @@ namespace Cake.SqlPackage
         /// The Cake environment in context.
         /// </summary>
         public ICakeEnvironment Environment { get; set; }
+        
+        /// <summary>
+        /// Runs SqlPackage with the specified settings.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        public void Execute(T settings)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            Run(settings, BuildArguments(settings));
+        }
+
+        protected abstract ProcessArgumentBuilder BuildArguments(T settings);
 
         /// <summary>
         /// Builds the common SqlPackage arguments.

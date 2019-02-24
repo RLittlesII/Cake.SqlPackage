@@ -11,7 +11,7 @@
         protected override void RunTool()
         {
             var tool = new SqlPackageImportRunner(FileSystem, Environment, ProcessRunner, Tools);
-            tool.Import(Settings);
+            tool.Execute(Settings);
         }
     }
 }

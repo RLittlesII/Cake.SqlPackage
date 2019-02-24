@@ -12,7 +12,7 @@
         protected override void RunTool()
         {
             var tool = new SqlPackagePublishRunner(FileSystem, Environment, ProcessRunner, Tools);
-            tool.Publish(Settings);
+            tool.Execute(Settings);
         }
     }
 }

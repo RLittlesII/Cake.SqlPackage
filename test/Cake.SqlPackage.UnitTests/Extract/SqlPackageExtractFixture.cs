@@ -11,7 +11,7 @@
         protected override void RunTool()
         {
             var tool = new SqlPackageExtractRunner(FileSystem, Environment, ProcessRunner, Tools);
-            tool.Extract(Settings);
+            tool.Execute(Settings);
         }
     }
 }
