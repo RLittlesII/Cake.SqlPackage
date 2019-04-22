@@ -14,7 +14,8 @@ BuildParameters.SetParameters(context: Context,
                             appVeyorAccountName: "RLittlesII",
                             shouldRunDupFinder: false,
 							shouldRunCodecov: false,
-							shouldRunInspectCode: false);
+							shouldRunInspectCode: false,
+                            shouldRunGitVersion: true);
 
 BuildParameters.PrintParameters(Context);
 
