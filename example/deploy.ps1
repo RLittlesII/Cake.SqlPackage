@@ -70,7 +70,7 @@ if (!(Test-Path $NUGET_EXE)) {
 
 # Try download NuGet.exe if not exists
 if (!(Test-Path $NUGET_EXE)) {
-    Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/v2.8.6/nuget.exe -OutFile $NUGET_EXE
+    Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile $NUGET_EXE
 }
 
 # Make sure NuGet exists where we expect it.

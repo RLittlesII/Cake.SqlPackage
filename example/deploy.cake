@@ -1,7 +1,8 @@
 ////////////////////////////////////
 // INSTALL TOOLS
 ////////////////////////////////////
-#tool "nuget:https://www.nuget.org/api/v2?package=Microsoft.Data.Tools.Msbuild&version=10.0.61026"
+#tool "nuget:?package=Microsoft.Data.Tools.Msbuild&version=16.0.62004.28040"
+#tool "nuget:?package=Microsoft.SqlServer.DACFx&version=150.4897.1"
 
 ////////////////////////////////////
 // INSTALL ADDINS
@@ -37,7 +38,7 @@ Task("Build")
 	.Does(() =>
 	{
         MSBuild("./CoffeeHouse.sln", settings =>
-            settings.UseToolVersion(MSBuildToolVersion.VS2015)
+            settings.UseToolVersion(MSBuildToolVersion.VS2019)
 				.SetPlatformTarget(PlatformTarget.MSIL)
                 .WithProperty("TreatWarningsAsErrors","true")
                 .SetVerbosity(Verbosity.Quiet)

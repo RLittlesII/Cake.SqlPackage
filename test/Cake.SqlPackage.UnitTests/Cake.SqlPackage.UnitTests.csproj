@@ -1,57 +1,30 @@
-﻿ <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net46;netcoreapp2.0</TargetFrameworks>
-    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <RuntimeFrameworkVersion>2.0.3</RuntimeFrameworkVersion>
-    <AssemblyName>Cake.SqlPackage.UnitTests</AssemblyName>
-    <PackageId>Cake.SqlPackage.UnitTests</PackageId>
-  </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net461;netcoreapp3.1;net5.0</TargetFrameworks>
+		<AssemblyName>Cake.SqlPackage.UnitTests</AssemblyName>
+		<PackageId>Cake.SqlPackage.UnitTests</PackageId>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <PackageTargetFallback Condition="'$(TargetFramework)' == 'netcoreapp1.0'">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
-    <PackageTargetFallback Condition="'$(TargetFramework)' == 'netstandard1.6'">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
-    <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netcoreapp2.0'">2.0.3</NetStandardImplicitPackageVersion>
-  </PropertyGroup>
+	<!-- Runtime identifiers for standalone build -->
+	<PropertyGroup Condition=" '$(TargetFramework)' == 'net461'">
+		<RuntimeIdentifiers>win7-x64;win7-x86</RuntimeIdentifiers>
+	</PropertyGroup>
 
-  <!-- Runtime identifiers for standalone build -->
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net46'">
-    <RuntimeIdentifiers>win7-x64;win7-x86</RuntimeIdentifiers>
-  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+		<PackageReference Include="xunit" Version="2.4.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Cake.Core" Version="1.0.0" />
+		<PackageReference Include="Cake.Testing" Version="1.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Cake.Core" Version="0.35.0" />
-    <PackageReference Include="Cake.Testing" Version="0.35.0" />
-    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta2-build3683" />
-  </ItemGroup>
-
-  <!-- .NET Framework packages -->
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <Reference Include="System" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Threading.Tasks" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <!-- Define .NET Core constants -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.6'">
-    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
-    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Cake.SqlPackage\Cake.SqlPackage.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Cake.SqlPackage\Cake.SqlPackage.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+	</ItemGroup>
 </Project>
